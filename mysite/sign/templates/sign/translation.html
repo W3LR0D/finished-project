@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignSync</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://raw.githubusercontent.com/W3LR0D/GroupFourSignSync/master/app/Images/Home_Images2.png');
+            background-size: cover;
+            position: relative; /* Added position relative */
+        }
+
+        img {
+            max-width: 33.33%; /* Limiting the width */
+            height: auto; /* Ensuring aspect ratio is maintained */
+            margin-top: -20px; /* Adjust the margin to move it up */
+        }
+
+            .title {
+        font-size: 56px;
+        font-weight: bold;
+        position: absolute;
+        top: calc(50% - 300px); /* Adjust the top position as needed */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white; /* Added color for visibility */
+    }
+
+    </style>
+</head>
+<body>
+    <div class="title" style="color: black;"><b>SignSync</b></div>
+    <!--<img src="https://raw.githubusercontent.com/W3LR0D/GroupFourSignSync/master/app/Images/T_Video.png" alt="T_Video">-->
+    <div class = "video-wrap">
+        <video controls autoplay muted>
+            <source src = "{% static '/img/videos/finalVideo.mp4' %}" type = 'video/mp4' ></source>
+        </video>
+    </div>
+</body>
+</html>

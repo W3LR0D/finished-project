@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignSync</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #mainTitle {
+            font-size: 69px; /*bigger size */
+            text-align: center; /*centralized*/
+            margin-top: 20px; /* Smaller margin */
+            margin-bottom: 0; /* No bottom margin */
+        }
+        #content {
+            text-align: center;
+            margin: 0 auto;
+            width: 70%; /* Adjust as needed */
+        }
+        #content h2 {
+            text-align: center;
+            margin-top: 10px; /* Smaller margin */
+            margin-bottom: 10px; /* One line spacing */
+        }
+        #content p {
+            text-align: justify;
+            font-style: italic;
+            margin-bottom: 20px; /* Two lines spacing */
+        }
+        /* Center-aligned paragraphs */
+        #content .center-aligned {
+            text-align: center;
+            margin: 0 auto; /* Centers the paragraph */
+        }
+        .bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+        }
+        textarea[name="blog"] {
+            margin-bottom: 60px; /* Four lines spacing */
+        }
+    </style>
+</head>
+<body style="background-image: url('https://raw.githubusercontent.com/W3LR0D/GroupFourSignSync/master/app/Images/Home_Images2.png'); background-size: cover;">
+
+        <br> <!-- This creates one blank line -->
+        <br> <!-- This creates another blank line -->
+    <h1 id="mainTitle">
+        Welcome to SignSync.</h1>
+    <div id="content">
+        <h2>Empowering the World Beyond Words</h2>
+        <br> <!-- This creates one blank line -->
+        <br> <!-- This creates another blank line -->
+
+        <p class="center-aligned"> <em>We leverage our website as a powerful tool to assist individuals seeking to bridge the communication gap 
+    with those who are hearing impaired. According to data from the National Deaf Center, approximately 3.6% of the United States population, 
+    roughly 11 million people, are affected by significant hearing loss. That's equivalent to 36 out of every 1,000 individuals facing challenges
+    in auditory communication. Our initiative, aptly named signSync, serves as a vital conduit facilitating effective communication between those 
+    proficient in American Sign Language (ASL) and those less familiar with it. SignSync offers simplified ASL constructs, designed to streamline basic 
+    communication for both fluent ASL users and novices alike. 
+    <br> <!-- This creates another blank line -->
+    <br> <!-- This creates another blank line -->
+        </em></p>
+        
+    </div>
+    
+    <div class="bottom-bar">
+    <div class="left-align" style="padding-left: 40px;">
+        <p class="center-aligned"><em><a href="https://nationaldeafcenter.org/faq/how-many-deaf-people-live-in-the-united-states/">National Deaf Center</a></em></p>
+    </div>
+    <div class="right-align" style="padding-right: 40px;">
+        <p class="center-aligned">© ASL-LEX.org</p>
+    </div>
+</div>
+<form action = '{% url 'translate' %}' method = 'post'>
+    {% csrf_token %}
+    <!--<textarea name="blog" rows="10" cols="80"> Please enter text for ASL translation: </textarea>-->
+    {{form}}
+    <div class="button-container">
+        <button onclick="translate()">Translate to ASL</button>
+    </div>
+</form>
+    <div id="aslOutput"></div>
+    <script src="home.ts"></script>
+</body>
+</html>
